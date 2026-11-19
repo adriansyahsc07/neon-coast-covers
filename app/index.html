@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Cover Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">NC</span>
+    <div>
+      <h1>Neon Coast Cover Studio</h1>
+      <p>Turn your photos into a multi-panel poster cover. Everything runs on this page — your pictures never leave the machine.</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <label class="file-btn">Add photos
+      <input id="fileInput" type="file" accept="image/*" multiple hidden>
+    </label>
+    <button id="demoBtn" type="button">Load demo set</button>
+  </div>
+</header>
+
+<main class="workspace">
+  <section class="stage-wrap" id="stageWrap">
+    <div id="dropHint">Drop photos anywhere on the stage</div>
+    <canvas id="stage" width="960" height="960"></canvas>
+    <p class="stage-note">Click a panel to select it, then drag inside it to reposition the photo. Pick a photo below to place it in the selected panel.</p>
+  </section>
+
+  <aside class="panel">
+    <h2>Photos</h2>
+    <div id="thumbs" class="thumbs"></div>
+    <div class="samples">
+      <span>Demo photos:</span>
+      <button type="button" data-sample="boulevard">Boulevard</button>
+      <button type="button" data-sample="pier">Pier</button>
+      <button type="button" data-sample="neon-street">Neon street</button>
+      <button type="button" data-sample="beach-sunset">Beach sunset</button>
+    </div>
+    <label class="check"><input id="fillAll" type="checkbox"> One photo fills every panel</label>
+
+    <h2>Layout</h2>
+    <div id="layoutRow" class="btn-row">
+      <button type="button" data-layout="grid9" class="on">Nine-panel grid</button>
+      <button type="button" data-layout="classic4">Classic four</button>
+      <button type="button" data-layout="hero3">Hero + three</button>
+      <button type="button" data-layout="bleed">Full bleed</button>
+      <button type="button" data-layout="stack">Snapshot stack</button>
+    </div>
+
+    <h2>Selected panel</h2>
+    <label class="slider">Zoom <input id="zoom" type="range" min="1" max="3" step="0.01" value="1"><span id="zoomVal">1.00×</span></label>
+    <div class="btn-row">
+      <button id="centerBtn" type="button">Centre photo</button>
+      <button id="clearPanelBtn" type="button">Clear panel</button>
+    </div>
+
+    <h2>Colour grade</h2>
+    <div id="gradeRow" class="btn-row">
+      <button type="button" data-grade="sunset" class="on">Sunset Strip</button>
+      <button type="button" data-grade="neon">Neon Nights</button>
+      <button type="button" data-grade="teal">Teal &amp; Orange</button>
+      <button type="button" data-grade="noir">Noir</button>
+      <button type="button" data-grade="none">Original</button>
+    </div>
+
+    <h2>Finish</h2>
+    <label class="slider">Film grain <input id="grain" type="range" min="0" max="1" step="0.01" value="0.35"><span id="grainVal">35%</span></label>
+    <label class="slider">Vignette <input id="vignette" type="range" min="0" max="1" step="0.01" value="0.55"><span id="vignetteVal">55%</span></label>
+
+    <h2>Caption</h2>
+    <label class="field">Title <input id="titleInput" type="text" value="NEON COAST" maxlength="42"></label>
+    <label class="field">Subtitle <input id="subInput" type="text" value="one night in the city" maxlength="60"></label>
+    <label class="slider">Title size <input id="titleSize" type="range" min="0.6" max="1.6" step="0.02" value="1"></label>
+
+    <h2>Preview shape</h2>
+    <div id="aspectRow" class="btn-row">
+      <button type="button" data-aspect="square" class="on">Square</button>
+      <button type="button" data-aspect="portrait">Portrait</button>
+      <button type="button" data-aspect="wide">Landscape</button>
+    </div>
+
+    <h2>Export PNG</h2>
+    <div class="btn-row exports">
+      <button id="expSquare" type="button">1080 × 1080</button>
+      <button id="expPortrait" type="button">1080 × 1350</button>
+      <button id="expWide" type="button">1920 × 1080</button>
+    </div>
+    <p class="fine">Exports render the cover exactly as previewed, at full size, and download as PNG.</p>
+  </aside>
+</main>
+
+<footer class="foot">Neon Coast Cover Studio — an original fan-made style tool. Not affiliated with any game publisher. Fonts: Anton &amp; Pacifico (SIL Open Font License, see app/fonts).</footer>
+<script src="app.js"></script>
+</body>
+</html>
